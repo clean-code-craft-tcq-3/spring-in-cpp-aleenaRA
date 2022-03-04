@@ -35,14 +35,8 @@ class LEDAlert : public IAlerter
 {
    public:
       bool ledGlows;
-      LEDAlert()
-      {
-         ledGlows = false;   
-      } 
-     void sendAlert()
-     {
-         ledGlows = true; 
-     }
+      LEDAlert();
+     void sendAlert();
 };
 
 class StatsAlerter
