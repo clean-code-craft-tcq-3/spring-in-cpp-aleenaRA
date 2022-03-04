@@ -23,7 +23,7 @@ void StatsAlerter :: checkAndAlert( const std::vector<float>& values)
    Stats obj = Statistics::ComputeStatistics(values);
    if (obj.max > maxThreshold)
    {
-      for(i = 0; i<alerters.size(); i++)
+      for( int i = 0; i<alerters.size(); i++)
       {
          alerters[i]->sendAlert();
       }     
