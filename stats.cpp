@@ -17,3 +17,19 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
     
     return obj;       
 }
+
+void StatsAlerter :: checkAndAlert( const std::vector<float>& values)
+{
+   for(int index =0, bool isAboveThresh = 0 ; index < values.size() ; index++)
+   {
+      if(values[i] > maxThreshold)
+         isAboveThresh = true;
+   }
+   if (isAboveThresh)
+   {
+      for(i = 0; i<alerters.size(); i++)
+      {
+         alerters[i]->sendAlert();
+      }     
+   }
+}
