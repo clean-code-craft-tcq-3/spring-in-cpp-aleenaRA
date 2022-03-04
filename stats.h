@@ -4,9 +4,7 @@ class Stats
 {
    public:
       float average, min , max;
-       Stats()
-       {
-       }    
+      Stats() {}    
 };
 
 namespace Statistics {
@@ -17,9 +15,7 @@ namespace Statistics {
 class IAlerter
 {
 public:
-   virtual void sendAlert()
-   {
-   }
+   virtual void sendAlert(){}
 };
 
 
@@ -34,8 +30,8 @@ class EmailAlert : public IAlerter
 class LEDAlert : public IAlerter
 {
    public:
-      bool ledGlows;
-      LEDAlert();
+     bool ledGlows;
+     LEDAlert();
      void sendAlert();
 };
 
@@ -44,8 +40,6 @@ class StatsAlerter
     float maxThreshold;
     std::vector<IAlerter*> alerters;
     public:
-    StatsAlerter( float lmaxThresh, std::vector<IAlerter*> lalerts) :maxThreshold(lmaxThresh), alerters(lalerts)
-    {
-    }
+    StatsAlerter( float lmaxThresh, std::vector<IAlerter*> lalerts) :maxThreshold(lmaxThresh), alerters(lalerts){}
     void checkAndAlert(const std::vector<float>& values);
 };
