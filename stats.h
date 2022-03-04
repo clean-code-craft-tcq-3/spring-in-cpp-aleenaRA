@@ -49,7 +49,8 @@ public:
      }
  };
 
-class StatsAlerter{
+class StatsAlerter
+{
     float maxThreshold;
     std::vector<IAlerter*> alerters;
     public:
