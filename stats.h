@@ -1,12 +1,13 @@
 #include <vector>
 
- class Stats{
-        public:
-        float average, min , max;
-     Stats()
-     {
-     }    
- };
+class Stats
+{
+   public:
+      float average, min , max;
+       Stats()
+       {
+       }    
+};
 
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>& );
@@ -16,38 +17,39 @@ namespace Statistics {
 class IAlerter
 {
 public:
-    virtual void sendAlert()
-    {
-    }
+   virtual void sendAlert()
+   {
+   }
 };
 
 
- class EmailAlert : public IAlerter
- {
-        public:
-        bool emailSent;
-     EmailAlert()
-     {
-      emailSent = false;   
-     } 
-     void sendAlert()
-     {
+class EmailAlert : public IAlerter
+{
+   public:
+      bool emailSent;
+      EmailAlert()
+      {
+         emailSent = false;   
+      } 
+      void sendAlert()
+      {
          emailSent = true; 
-     }
- };
- class LEDAlert : public IAlerter
- {
-        public:
-        bool ledGlows;
-     LEDAlert()
-     {
-      ledGlows = false;   
-     } 
+      }
+};
+
+class LEDAlert : public IAlerter
+{
+   public:
+      bool ledGlows;
+      LEDAlert()
+      {
+         ledGlows = false;   
+      } 
      void sendAlert()
      {
          ledGlows = true; 
      }
- };
+};
 
 class StatsAlerter
 {
