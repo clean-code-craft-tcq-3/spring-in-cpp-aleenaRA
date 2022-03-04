@@ -29,6 +29,24 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
     return obj;       
 }
 
+EmailAlert::EmailAlert()
+{
+   emailSent = false;   
+} 
+void EmailAlert::sendAlert()
+{
+   emailSent = true; 
+}
+
+LEDAlert::LEDAlert()
+{
+   ledGlows = false;   
+} 
+void LEDAlert::sendAlert()
+{
+   ledGlows = true; 
+}
+
 void StatsAlerter :: checkAndAlert( const std::vector<float>& values)
 {
    Stats obj = Statistics::ComputeStatistics(values);
