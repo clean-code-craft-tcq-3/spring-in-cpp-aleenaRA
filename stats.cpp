@@ -3,8 +3,8 @@
 Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
     //Implement statistics here
     Stats obj;
-    float obj.max = values.front();
-    float obj.min = values.front();
+    obj.max = values.front();
+    obj.min = values.front();
     float sum=0.0;
     for(size_t index = 0; index < values.size() ; index++)
     {    
