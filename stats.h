@@ -56,20 +56,5 @@ class StatsAlerter{
     StatsAlerter( float lmaxThresh, std::vector<IAlerter*> lalerts) :maxThreshold(lmaxThresh), alerters(lalerts)
     {
     }
-    void checkAndAlert(const std::vector<float>& values)
-    {
-        for(int index =0, bool isAboveThresh = 0 ; index < values.size() ; index++)
-        {
-            if(values[i] > maxThreshold)
-                isAboveThresh = true;
-        }
-        if (isAboveThresh)
-        {
-            for(i = 0; i<alerters.size(); i++)
-            {
-                alerters[i]->sendAlert();
-            }
-            
-        }
-    }
+    void checkAndAlert(const std::vector<float>& values);
 };
