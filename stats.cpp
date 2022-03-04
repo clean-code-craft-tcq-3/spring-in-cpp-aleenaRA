@@ -6,7 +6,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
     float obj.max = values.front();
     float obj.min = values.front();
     float sum=0.0;
-    for(int index = 0; index < values.size() ; index++)
+    for(size_t index = 0; index < values.size() ; index++)
     {    
         sum += values[index];
         if(obj.max < values[index])
