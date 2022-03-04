@@ -3,18 +3,27 @@
 Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
     //Implement statistics here
     Stats obj;
-    obj.max = values.front();
-    obj.min = values.front();
-    float sum=0.0;
-    for(size_t index = 0; index < values.size() ; index++)
+    if(values.size() == 0)
+    {
+       obj.max = NAN;
+       obj.min = NAN;
+       obj.average = NAN; 
+    }
+    else
     {    
-        sum += values[index];
-        if(obj.max < values[index])
-            obj.max = values[index];
-        if(obj.min > values[index])
+       obj.max = values.front();
+       obj.min = values.front();
+       float sum=0.0;
+       for(size_t index = 0; index < values.size() ; index++)
+       {    
+          sum += values[index];
+          if(obj.max < values[index])
+             obj.max = values[index];
+          if(obj.min > values[index])
             obj.min = values[index];
-    }   
-    obj.average = sum / values.size();
+       }   
+       obj.average = sum / values.size();
+    }
     
     return obj;       
 }
