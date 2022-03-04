@@ -20,12 +20,8 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& values) {
 
 void StatsAlerter :: checkAndAlert( const std::vector<float>& values)
 {
-   for(int index =0, bool isAboveThresh = 0 ; index < values.size() ; index++)
-   {
-      if(values[i] > maxThreshold)
-         isAboveThresh = true;
-   }
-   if (isAboveThresh)
+   Stats obj = Statistics::ComputeStatistics(values);
+   if (obj.max > maxThreshold)
    {
       for(i = 0; i<alerters.size(); i++)
       {
