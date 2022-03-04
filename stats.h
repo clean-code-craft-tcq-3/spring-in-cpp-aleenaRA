@@ -27,14 +27,8 @@ class EmailAlert : public IAlerter
 {
    public:
       bool emailSent;
-      EmailAlert()
-      {
-         emailSent = false;   
-      } 
-      void sendAlert()
-      {
-         emailSent = true; 
-      }
+      EmailAlert();
+      void sendAlert();
 };
 
 class LEDAlert : public IAlerter
